@@ -75,12 +75,12 @@ Each image in the dataset has multiple captions describing it from different per
 3. **Start the flask app1 for prediction on web page app:**
     ```bash
     cd ..
-    cda app1
+    cd app1
     python app.py
 
 4. **Start the flask app2 for Broadcasting the prediction in real time on 2nd web page app:**
     ```bash
     cd ..
-    cda app2
+    cd app2
     python app.py
 
