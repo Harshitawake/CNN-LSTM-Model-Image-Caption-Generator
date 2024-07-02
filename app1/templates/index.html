@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Caption Generator</title>
+</head>
+<body>
+    <h1>Image Captioning</h1>
+    <form method="post">
+        <label for="image_path">Enter Image Path:</label>
+        <input type="text" id="image_path" name="image_path">
+        <button type="submit">Predict</button>
+    </form>
+    {% if image_path %}
+    <h2>Image Path:</h2>
+    <p>{{ image_path }}</p>
+    <h2>Uploaded Image</h2>
+    <img src="{{ url_for('uploaded_file', filename=image_path.split('/')[-1]) }}" alt="Uploaded Image" style="max-width: 500px;">
+    {% endif %}
+    {% if caption %}
+    <h2>Predicted Caption:</h2>
+    <p>{{ caption }}</p>
+    {% endif %}
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+
